@@ -1,5 +1,5 @@
-import { getPerson, getTrending, getTrendingMovies } from './API/trendingGetters.js';   
-import { baseUrl, person } from './API/config.js';
-getTrending(baseUrl);
-getTrendingMovies(baseUrl);
-getPerson(baseUrl, person);
+import { getPerson, getTrending, getTrendingMovies } from './api/trendingGetters.js';   
+import { person } from './api/config.js';
+getTrending();
+getTrendingMovies();
+getPerson(person);
