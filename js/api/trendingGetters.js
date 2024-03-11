@@ -20,6 +20,19 @@ export const getTrendingMovies = async () => {
     return data;
 }
 
+export const getTrendingTV = async () => {
+      const response = await fetch(BASE_URL + "trending/tv/day?language=en-US", OPTIONS);
+      const people = await response.json();
+      return people;
+};
+
+
+export const getTrendingPeople = async () => {
+      const response = await fetch(BASE_URL + "trending/person/day?language=en-US", OPTIONS);
+      const data = await response.json();
+      return data;
+};
+
 export const getPerson = async (person) => {
     const response = await fetch(BASE_URL + `search/person?query=${person}`, OPTIONS);
     const data = await response.json();

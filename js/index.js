@@ -1,9 +1,8 @@
 import { getPerson, getTrending, getTrendingMovies } from './api/trendingGetters.js';
 import { person } from './api/config.js';
-import dotenv from 'dotenv';
-export { getTrendingMovies} from './api/trendingGetters.js';
+//import dotenv from 'dotenv';
 //import del package che mi rende disponibili le variabili d'ambiente
-dotenv.config();
+//dotenv.config();
 
 export const trendingDataMovies = getTrendingMovies().then(data => {
     data.results.forEach(movie => {
