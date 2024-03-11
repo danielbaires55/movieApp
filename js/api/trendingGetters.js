@@ -20,7 +20,6 @@ export const getTrendingMovies = async () => {
     return data;
 }
 
-
 export const getPerson = async (person) => {
     const response = await fetch(BASE_URL + `search/person?query=${person}`, OPTIONS);
     const data = await response.json();
