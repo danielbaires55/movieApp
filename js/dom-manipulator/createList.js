@@ -8,28 +8,42 @@
 export const createTrendingMoviesList = (movies) => {
     const cardContainer = document.getElementById("movies-cards");
     movies.forEach(element => {
-        //Creiamo i nodi
+        //Card
         const card = document.createElement("div");
+        card.classList.add("card");
+        
+        //TextContainer
         const textContainer = document.createElement("div");
+        card.classList.add("text-container");
+
+        //Image
         const image = document.createElement("img");
-        image.src = `https://image.tmdb.org/t/p/w500${element.poster_path}`;
-        image.alt = "poster";
+        image.src = `https://image.tmdb.org/t/p/original${element.poster_path}`;
+        image.alt = "image";
+        image.classList.add("image");
+
+        //Title
         const title = document.createElement("h1");
+        title.classList.add("title");
         title.innerText = element.title;
+
+        //Description
         const description = document.createElement("p");
+        description.classList.add("description");
         description.innerText = element.overview;
-        const cardButton = document.createElement("button");
+
+        //Button
+        //const cardButton = document.createElement("button");
+
+
 
         //Appendiamo i nodi al DOM
         textContainer.appendChild(title);
         textContainer.appendChild(description);
-        textContainer.appendChild(cardButton);
+        //textContainer.appendChild(cardButton);
         card.appendChild(textContainer);
         card.appendChild(image);
-        card.classList.add();
         cardContainer.appendChild(card);
-
-        //AGGIUNGERE LO STYLE
     });
 }
 //funzione che crea una lista di serie tv

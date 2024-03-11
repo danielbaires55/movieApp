@@ -1,0 +1,49 @@
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(320deg, rgba(2, 0, 36, 1) 0%, rgba(159, 6, 6, 1) 100%, rgba(0, 212, 255, 1) 100%);
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#movie-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #2360b7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    height: 40%;
+    width: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #000;
+}
+
+.image {
+    width: 80%;
+    height: 500px;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+.description {
+    font-size: 20px;
+    color: #000;
+}
