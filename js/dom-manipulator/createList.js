@@ -6,63 +6,128 @@
 
 // funzione che crea una lista di film
 export const createTrendingMoviesList = (movies) => {
-    const cardContainer = document.getElementById("movies-cards");
+
+    const cardContainer = document.querySelector(".container");
+
+    // Slide
+    const slide = document.createElement("div");
+    slide.classList.add("slide");
+
     movies.forEach(element => {
-        //Card
-        const card = document.createElement("div");
-        card.classList.add("card");
-        
-        //TextContainer
-        const textContainer = document.createElement("div");
-        card.classList.add("text-container");
+        // Item
+        const item = document.createElement("div");
+        item.classList.add("item");
+        item.style.backgroundImage = `url('https://image.tmdb.org/t/p/original${element.backdrop_path}')`;
 
-        //Image
-        const image = document.createElement("img");
-        image.src = `https://image.tmdb.org/t/p/original${element.poster_path}`;
-        image.alt = "image";
-        image.classList.add("image");
+        // Content
+        const content = document.createElement("div");
+        content.classList.add("content");
 
-        //Title
-        const title = document.createElement("h1");
+        // Title
+        const title = document.createElement("div");
         title.classList.add("title");
         title.innerText = element.title;
 
-        //Description
-        const description = document.createElement("p");
+        // Description
+        const description = document.createElement("div");
         description.classList.add("description");
         description.innerText = element.overview;
 
-        //Button
-        //const cardButton = document.createElement("button");
-
-
-
-        //Appendiamo i nodi al DOM
-        textContainer.appendChild(title);
-        textContainer.appendChild(description);
-        //textContainer.appendChild(cardButton);
-        card.appendChild(textContainer);
-        card.appendChild(image);
-        cardContainer.appendChild(card);
+        // Aggiungiamo gli elementi al DOM
+        content.appendChild(title);
+        content.appendChild(description);
+        item.appendChild(content);
+        slide.appendChild(item);
     });
+    // Aggiungiamo l'elemento slide al container
+    cardContainer.appendChild(slide);
+
 }
+
 //funzione che crea una lista di serie tv
 export const createTrendingTV = (tv) => {
-    const list = document.getElementById("trending-tv-list");
-    tv.forEach(element => {
-        const listItem = document.createElement("li");
-        listItem.textContent = element.name;
-        list.appendChild(listItem);
-    });
-}
 
+    const cardContainer = document.querySelector(".container");
+
+    // Slide
+    const slide = document.createElement("div");
+    slide.classList.add("slide");
+
+    tv.forEach(element => {
+        // Item
+        const item = document.createElement("div");
+        item.classList.add("item");
+        item.style.backgroundImage = `url('https://image.tmdb.org/t/p/original${element.backdrop_path}')`;
+
+        // Content
+        const content = document.createElement("div");
+        content.classList.add("content");
+
+        // Title
+        const title = document.createElement("div");
+        title.classList.add("title");
+        title.innerText = element.name;
+
+        // Description
+        const description = document.createElement("div");
+        description.classList.add("description");
+        description.innerText = element.overview;
+
+        // Aggiungiamo gli elementi al DOM
+        content.appendChild(title);
+        content.appendChild(description);
+        item.appendChild(content);
+        slide.appendChild(item);
+    });
+    // Aggiungiamo l'elemento slide al container
+    cardContainer.appendChild(slide);
+}
 
 //funzione che crea una lista di persone
 export const createTrendingPeople = (people) => {
-    const list = document.getElementById("trending-people-list");
+
+    const cardContainer = document.querySelector(".container");
+
+    // Slide
+    const slide = document.createElement("div");
+    slide.classList.add("slide");
+
     people.forEach(element => {
-        const listItem = document.createElement("li");
-        listItem.textContent = element.name;
-        list.appendChild(listItem);
+        // Item
+        const item = document.createElement("div");
+        item.classList.add("item");
+        item.style.backgroundImage = `url('https://image.tmdb.org/t/p/original${element.profile_path}')`;
+
+        // Content
+        const content = document.createElement("div");
+        content.classList.add("content");
+
+        // Name
+        const name = document.createElement("div");
+        name.classList.add("name");
+        name.innerText = element.name;
+        name.style.color = "red";
+
+        // Known for department
+        const knowDep = document.createElement("div");
+        knowDep.classList.add("known-for-department");
+        knowDep.innerText = `Known for: ${element.known_for_department}`;
+        knowDep.style.color = "red";
+
+        // Assembling the content
+        content.appendChild(name); // Append name to content
+        content.appendChild(knowDep); // Append known_for_department to content
+
+        item.appendChild(content); // Append content to item
+
+        slide.appendChild(item); // Append item to slide
+    });
+    cardContainer.appendChild(slide);
+}
+
+export const createTrending = (trending) => {
+
+    trending.forEach(element => {
+
     });
 }

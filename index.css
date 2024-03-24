@@ -91,7 +91,7 @@
     color: rgb(255, 255, 255);
     overflow-wrap: anywhere;
     width: 600px;
-    overflow-wrap: break-word;
+    
 }
 
 @keyframes animate {
