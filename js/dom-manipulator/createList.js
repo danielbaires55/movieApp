@@ -4,7 +4,6 @@
  * @returns 
  */
 
-// funzione che crea una lista di film
 export const createTrendingMoviesList = (movies) => {
 
     const cardContainer = document.querySelector(".container");
@@ -33,9 +32,15 @@ export const createTrendingMoviesList = (movies) => {
         description.classList.add("description");
         description.innerText = element.overview;
 
+        //Vote average
+        const voteAverage = document.createElement("div");
+        voteAverage.classList.add("vote-average");
+        voteAverage.innerText = `Vote average: ${element.vote_average}`;
+
         // Aggiungiamo gli elementi al DOM
         content.appendChild(title);
         content.appendChild(description);
+        content.appendChild(voteAverage);
         item.appendChild(content);
         slide.appendChild(item);
     });
@@ -44,7 +49,6 @@ export const createTrendingMoviesList = (movies) => {
 
 }
 
-//funzione che crea una lista di serie tv
 export const createTrendingTV = (tv) => {
 
     const cardContainer = document.querySelector(".container");
@@ -68,6 +72,11 @@ export const createTrendingTV = (tv) => {
         title.classList.add("title");
         title.innerText = element.name;
 
+        //Vote average
+        const voteAverage = document.createElement("div");
+        voteAverage.classList.add("vote-average");
+        voteAverage.innerText = `Vote average: ${element.vote_average}`;
+
         // Description
         const description = document.createElement("div");
         description.classList.add("description");
@@ -76,6 +85,7 @@ export const createTrendingTV = (tv) => {
         // Aggiungiamo gli elementi al DOM
         content.appendChild(title);
         content.appendChild(description);
+        content.appendChild(voteAverage);
         item.appendChild(content);
         slide.appendChild(item);
     });
@@ -83,7 +93,59 @@ export const createTrendingTV = (tv) => {
     cardContainer.appendChild(slide);
 }
 
-//funzione che crea una lista di persone
+export const createTrending = (trending) => {
+
+    const cardContainer = document.querySelector(".container");
+
+    // Slide
+    const slide = document.createElement("div");
+    slide.classList.add("slide");
+
+    trending.forEach(element => {
+        if (element.name !== undefined) {
+            // Item
+            const item = document.createElement("div");
+            item.classList.add("item");
+            item.style.backgroundImage = `url('https://image.tmdb.org/t/p/original${element.backdrop_path}')`;
+
+            // Content
+            const content = document.createElement("div");
+            content.classList.add("content");
+
+            // Title
+            const name = document.createElement("div");
+            name.classList.add("title");
+            name.innerText = element.name;
+
+            // Media type
+            const mediaType = document.createElement("div");
+            mediaType.classList.add("media-type");
+            mediaType.innerText = element.media_type;
+            mediaType.style.textTransform = "uppercase";
+
+            // Vote average
+            const voteAverage = document.createElement("div");
+            voteAverage.classList.add("vote-average");
+            voteAverage.innerText = `Vote average: ${element.vote_average}`;
+
+            // Description
+            const description = document.createElement("div");
+            description.classList.add("description");
+            description.innerText = element.overview;
+
+            // Aggiungiamo gli elementi al DOM
+            content.appendChild(name);
+            content.appendChild(mediaType);
+            content.appendChild(description);
+            content.appendChild(voteAverage);
+            item.appendChild(content);
+            slide.appendChild(item);
+        }
+
+    });
+    cardContainer.appendChild(slide);
+}
+
 export const createTrendingPeople = (people) => {
 
     const cardContainer = document.querySelector(".container");
@@ -123,11 +185,4 @@ export const createTrendingPeople = (people) => {
         slide.appendChild(item); // Append item to slide
     });
     cardContainer.appendChild(slide);
-}
-
-export const createTrending = (trending) => {
-
-    trending.forEach(element => {
-
-    });
 }

@@ -94,6 +94,17 @@
     
 }
 
+.content .vote-average {
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    color: rgb(255, 255, 255); 
+}
+
+
+.content .media-type {
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    color: rgb(255, 255, 255); 
+}
+
 @keyframes animate {
     from {
         opacity: 0;
@@ -138,7 +149,7 @@ a{
     position: relative; 
     border: none;
     background: transparent;
-    margin-left: 800px;
+    margin-left: 250px;
     cursor: pointer;
 }
 
