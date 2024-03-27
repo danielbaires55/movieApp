@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
             slide.appendChild(firstItem);
         }, interval);
     }
-    autoChangeSlide(8000);
+    //autoChangeSlide(8000);
 });
 

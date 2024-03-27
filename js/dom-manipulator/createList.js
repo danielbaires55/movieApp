@@ -8,11 +8,16 @@ export const createTrendingMoviesList = (movies) => {
 
     const cardContainer = document.querySelector(".container");
 
+    const  searchInput = document.querySelector(".search-input");  
+
+    const searchButton = document.querySelector(".search-button");
+
+
     // Slide
     const slide = document.createElement("div");
     slide.classList.add("slide");
 
-    movies.forEach(element => {
+    movies.forEach(element => {     
         // Item
         const item = document.createElement("div");
         item.classList.add("item");

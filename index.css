@@ -142,14 +142,24 @@
     color: #fff;
 }
 
+.button input{
+    width: 120px;
+    height: 45px;
+    border-radius: 8px;
+    border: none;
+    cursor: text;
+    transition: 0.3s;
+}
+
 a{
     text-decoration: none;
-    color: #ededed;
+    color: #ffea00;
     z-index: 9999;
     position: relative; 
     border: none;
     background: transparent;
     margin-left: 250px;
+    font-size: x-large;
     cursor: pointer;
 }
 
